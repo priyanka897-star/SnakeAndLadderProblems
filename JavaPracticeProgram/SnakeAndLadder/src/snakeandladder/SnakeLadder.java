@@ -2,34 +2,35 @@ package snakeandladder;
 
 public class SnakeLadder {
 	public static void main(String[] args) {
-		System.out.println("Starting of Snake and Ladder Game");
-	    final int NoPlay = 0;
-		final int LADDER = 1;
-		final int SNAKE = 2;
-		//variables
-		int dice = (int)((Math.random()*10) % 6);
-		int playerMove =(int)((Math.random()*10) %3 );
-		int playerCurrentPosition = 10;
-		 switch(playerMove)
-		    {
-		    case 0: 
-		    	System.out.println("No Movement");
-		    	break;
-		    case 1: 
-		    	playerCurrentPosition = LADDER;
-		    	playerCurrentPosition +=dice;
-		        System.out.println("Ladder move forward " + playerCurrentPosition);
-		        break;
-		    case 2:
-		    	playerCurrentPosition =SNAKE ;
+            final int LADDER = 1;
+			final int SNAKE = 2;
+			 int dieRoll = 0;
+			int playerCurrentPosition = 0;
+			while( playerCurrentPosition < 100) 
+			{
+			   dieRoll++;
+			  int dice = (int)((Math.random()*10) % 6)+1;
+			  System.out.println("random number is:" +dice);   
+		      int position  = (int)((Math.random()*10) % 3);
+		      if(position == LADDER)
+		     {	
+		    	  playerCurrentPosition +=dice;
+		    if(playerCurrentPosition > 100)
 		    	playerCurrentPosition -=dice;
-		    System.out.println("Snakes move backward "+ playerCurrentPosition);
-		    break;
-		    default :
-		    	playerCurrentPosition +=dice;
-		    System.out.println("Movement to " +playerCurrentPosition );
+		       System.out.println("Ladder move forward "+ playerCurrentPosition);
 		    }
-				
+		    else if(position == SNAKE)
+		    {	
+		    	playerCurrentPosition -=dice;
+		    if(playerCurrentPosition < 0)
+		    	playerCurrentPosition= 0;
+		        System.out.println("Snakes move backward "+ playerCurrentPosition);
+		    }
+		    else
+		    {
+		    System.out.println("Player are on "+ playerCurrentPosition);
+		    }
+		    System.out.println("Number of time die to win the game:" + dieRoll);
+		}
 	}
-		
-	}	
+}
