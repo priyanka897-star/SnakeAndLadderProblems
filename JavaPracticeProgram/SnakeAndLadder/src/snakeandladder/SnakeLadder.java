@@ -49,9 +49,9 @@ public class SnakeLadder {
 	    }
 	    //System.out.println("Number of time die to win the game" + dieRoll);
 	    if(player1CurrentPosition == 100)
-	    	System.out.println("Player 1 Win");	
+	    	System.out.println("Player 1 Win Game");	
 	    else  if(player2CurrentPosition == 100)
-	    	System.out.println("Player 2 Win");	
+	    	System.out.println("Player 2 Win Game");	
 	    
 	  }
 	 }
