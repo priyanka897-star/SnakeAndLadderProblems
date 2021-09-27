@@ -30,7 +30,7 @@ public class SnakeLadder {
 		    {
 		    System.out.println("Player are on "+ playerCurrentPosition);
 		    }
-		    System.out.println("Number of time die to win the game:" + dieRoll);
+		    System.out.println("Number of time die to win the game :" + dieRoll);
 		}
 	}
 }
